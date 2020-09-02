@@ -1,0 +1,15 @@
+version: '3'
+services:
+  fortune-eureka:
+    image: fortune-eureka:0.0.1-SNAPSHOT
+    ports:
+    - 8000:8080
+  fortune-service:
+    image: fortune-service:0.0.1-SNAPSHOT
+    ports:
+    - 8080:8080
+  fortune-ui:
+    image: fortune-ui:0.0.1-SNAPSHOT
+    ports:
+    - 8080:8080
+ 

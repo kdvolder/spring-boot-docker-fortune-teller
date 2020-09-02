@@ -1,0 +1,16 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://172.17.0.2:8080/eureka
+#      defaultZone: http://172.17.0.2:8080/eureka      
+#      defaultZone: http://localhost:40011/eureka
+fortunes:
+  messages:
+  - You will get a surprising opportunity
+  - When it rains, an umbrella will be near
+  - The way of Spring is right for you
+  - Things will only get better from here
+  - Dockerizing apps is the way of the future
+  - A mysterious stranger presents a great oportunity 

@@ -1,0 +1,12 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  server:
+    renewal-percent-threshold: 0
+logging:
+  level:
+    com:
+      netflix:
+        discovery: 'OFF'
+        eureka: 'OFF'

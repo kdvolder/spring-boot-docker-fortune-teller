@@ -3,7 +3,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://172.17.0.2:8080/eureka
+      defaultZone: http://fortune-eureka:8080/eureka
 #      defaultZone: http://172.17.0.2:8080/eureka      
 #      defaultZone: http://localhost:40011/eureka
 fortunes:

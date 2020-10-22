@@ -19,13 +19,37 @@ Clone the repo.
 Use the 'Import Existing Maven Projects' wizard in STS. Point it at the root of this
 repo. 
 
-Running as Docker Containers
-============================
+Running as Docker Containers (STS)
+==================================
 
  - Create a 'Docker Run Target' by clicking the '+' button in the Boot Dash.
  - Simply drag and drop the apps onto the target
 
 Everything then happens automatically.
+
+Running as Docker Containers with Docker Compose CLI
+====================================================
+
+For reference, a `docker-compose.yml` file is provided in the root of this repo.
+The docker compose file assumes you have already created the images.
+If you already tried running the apps in docker from Boot Dash the images
+will exist. Otherwise, you need to run `./mvnw spring-boot:build-image` on each
+project. For example in bash you can do like so:
+
+```
+for f in fortune-*
+do
+   cd $f
+   ./mvnw spring-boot:build-image
+   cd ..
+done
+```
+
+Once images have been created you can run them like so:
+
+```
+$ docker-compose up
+```
 
 Running as Local Apps
 =====================

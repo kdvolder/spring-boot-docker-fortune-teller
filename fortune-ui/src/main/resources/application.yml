@@ -2,3 +2,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://fortune-eureka:8080/eureka
+---
+spring:
+  profiles:
+  - local
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.int}

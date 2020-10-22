@@ -10,3 +10,9 @@ logging:
       netflix:
         discovery: 'OFF'
         eureka: 'OFF'
+---
+spring:
+  profiles:
+  - local
+server:
+  port: 8761

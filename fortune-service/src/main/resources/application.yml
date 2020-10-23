@@ -19,7 +19,8 @@ fortunes:
   - The way of Spring is right for you
   - Things will only get better from here
   - Dockerizing apps is the way of the future
-  - A mysterious stranger presents a great oportunity 
+  - A mysterious stranger presents a great oportunity
+  - Eclipse is awesome!
 ---
 spring:
   profiles:

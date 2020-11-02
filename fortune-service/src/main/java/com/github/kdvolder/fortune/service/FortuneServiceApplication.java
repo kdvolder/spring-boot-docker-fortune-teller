@@ -13,6 +13,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,7 @@ import com.github.kdvolder.fortune.service.data.FortuneRepository;
 @RestController
 @EnableDiscoveryClient
 @EnableConfigurationProperties(FortuneConfig.class)
+@EnableScheduling
 public class FortuneServiceApplication {
 
 	@Autowired

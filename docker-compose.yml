@@ -8,6 +8,10 @@ services:
     image: fortune-service:0.0.1-SNAPSHOT
     ports:
     - 8002:8080
+  fortune-admin:
+    image: fortune-admin-server:0.0.1-SNAPSHOT
+    ports:
+    - 8003:8080
   fortune-ui:
     image: fortune-ui:0.0.1-SNAPSHOT
     ports:

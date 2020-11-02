@@ -1,6 +1,9 @@
+#
+# fortune-service 
+#
 spring:
   datasource:
-    url: jdbc:h2:file:/tmp/data/demo
+    url: jdbc:h2:file:/tmp/data/demo-${random:int}
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,6 +24,14 @@ fortunes:
   - Dockerizing apps is the way of the future
   - A mysterious stranger presents a great oportunity
   - Eclipse is awesome!
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: always
 ---
 spring:
   profiles:

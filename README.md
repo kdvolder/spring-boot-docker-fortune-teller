@@ -40,7 +40,7 @@ project. For example in bash you can do like so:
 for f in fortune-*
 do
    cd $f
-   ./mvnw spring-boot:build-image
+   ./mvnw -Dmaven.test.skip=true spring-boot:build-image
    cd ..
 done
 ```
@@ -67,3 +67,5 @@ You must enable this profile explicitly when you run the apps on localhost.
 In the Boot Dash you can do this by selecting a local app node
 and clicking on the pencil icon. Then type 'local' into the
 `Profiles` input box.
+
+Or you can run the apps on the CLI using a command like `./mvnw -Dspring.profiles.active=local spring-boot:run`. 

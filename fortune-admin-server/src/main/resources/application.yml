@@ -1,35 +1,46 @@
-eureka:
+spring:
+  application:
+    name: fortune-admin-server
+  profiles:
+    active:
+      - secure
+
+# tag::configuration-eureka[]
+eureka:   #<1>
   instance:
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
+    prefer-ip-address: true
     metadata-map:
       startup: ${random.int}    #needed to trigger info and endpoint update after restart
-    prefer-ip-address: true
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
+      #defaultZone: #${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
       defaultZone: http://fortune-eureka:8080/eureka
-logging:
-  level:
-    '[de.codecentric.boot.admin]': debug
 management:
   endpoints:
     web:
       exposure:
-        include:
-        - "*"
+        include: "*"  #<2>
   endpoint:
     health:
-      show-details: always
+      show-details: ALWAYS
+# end::configuration-eureka[]
+
 ---
 spring:
-  profiles:
-  - local
-server:
-  port: 8000
+  profiles: insecure
+
+---
+spring:
+  profiles: secure
+  security:
+    user:
+      name: "user"
+      password: "password"
 eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
   instance:
-    instance-id: ${spring.application.name}:${random.int}
+    metadata-map:
+      user.name: "user"         #These two are needed so that the server
+      user.password: "password" #can access the protected client endpoints

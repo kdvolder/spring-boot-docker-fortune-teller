@@ -1,12 +1,16 @@
 #
 # fortune-service 
 #
+#spring:
+#  datasource:
+#    url: jdbc:h2:file:/tmp/data/demo-${random:int}
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: create-drop
 spring:
-  datasource:
-    url: jdbc:h2:file:/tmp/data/demo-${random:int}
-  jpa:
-    hibernate:
-      ddl-auto: update
+  application:
+    name: fortune-service
 eureka:
   instance:
     prefer-ip-address: true

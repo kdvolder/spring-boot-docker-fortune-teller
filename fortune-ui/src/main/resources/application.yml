@@ -1,9 +1,17 @@
+spring:
+  application:
+    name: fortune-ui
 eureka:
   client:
     service-url:
       defaultZone: http://fortune-eureka:8080/eureka
   instance:
-    prefer-ip-address: true      
+    prefer-ip-address: true
+zuul:
+  routes:
+    fortunes: 
+      path: /api/fortune/**
+      url: http://fortune-service:8080/
 ---
 spring:
   profiles:
